@@ -1,0 +1,54 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Entre com o primeiro número: ");
+		
+		if (double.TryParse(Console.ReadLine(), out double n1))
+		{
+			Console.WriteLine("Entre com o segundo número: ");
+			
+			if (double.TryParse(Console.ReadLine(), out double n2))
+			{
+				Console.WriteLine("Selecione sua operação (+, -, * e /)");
+				String Op = Console.ReadLine();
+				switch (Op)
+					{
+					case "+":
+						Console.WriteLine("Seu resultado é " + n1+n2);
+					break;
+					case "-":
+						Console.WriteLine("Seu resultado é " + (n1-n2));
+					break;
+					case "*":
+						Console.WriteLine("Seu resultado é ", n1*n2);
+					break;
+					case "/":
+						if (n2 == 0)
+						{
+							Console.WriteLine("Foi introduzido 0 no segundo valor, impossivel realizar a operação");
+						}
+						else
+						{
+							Console.WriteLine("Seu resultado é " + n1/n2);
+						}	
+					break;
+					default:
+						Console.WriteLine("Foi inserido um simbolo fora do contexto.");
+					break;
+					}
+			
+			}
+			else
+			{
+				Console.WriteLine("Foi introduzido um valor fora do conjunto dos Reais ou que beira o infinito.");			
+			}	
+		}
+		else
+		{
+			Console.WriteLine("Foi introduzido um valor fora do conjunto dos Reais ou que beira o infinito.");			
+		}	
+	}
+}

@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Entre com uma frase: ");
+		string frase = Console.ReadLine();
+		Console.WriteLine("Entre com uma letra: ");
+		string letra = Console.ReadLine();
+		 if (letra.Length != 1)
+        {
+            Console.WriteLine("A letra deve ter apenas um caractere.");
+            return;
+        }
+		char letraChar = letra[0];
+        int contagem = 0;
+        
+        for (int i = 0; i < frase.Length; i++)
+        {
+            if (frase[i] == letraChar)
+            {
+                contagem++;
+            }
+        }
+        
+        Console.WriteLine(contagem);
+	}
+}
